@@ -1,12 +1,14 @@
 version: '3.7'
 services:
   mongodb:
-    container_name: dock-mongodb
+    container_name: mongodb
     image: mongo:latest
     network_mode: host
+    # ports:
+    #   - "27017:27017"
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: MONdb20
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: MONdb20
     volumes:
       - ./data:/data/db:rw
